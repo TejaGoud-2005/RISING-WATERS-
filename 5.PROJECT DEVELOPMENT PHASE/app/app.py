@@ -1,10 +1,12 @@
+import warnings
+warnings.filterwarnings("ignore")
 from flask import Flask, render_template, request
 import numpy as np
 import pickle  
 
 app = Flask(__name__)
 
-model = pickle.load(open('models/logreg_pipeline.pkl', 'rb'))
+model = pickle.load(open('../models/logreg_pipeline.pkl', 'rb'))
 
 
 @app.route('/')
